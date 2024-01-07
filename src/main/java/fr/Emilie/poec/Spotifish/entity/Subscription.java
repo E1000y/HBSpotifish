@@ -1,6 +1,7 @@
 package fr.Emilie.poec.Spotifish.entity;
 
 
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-
+@Entity
 public class Subscription {
 
     private Long id;

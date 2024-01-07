@@ -1,5 +1,6 @@
 package fr.Emilie.poec.Spotifish.entity;
 
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,8 +15,8 @@ import java.util.List;
 @NoArgsConstructor
 @Setter
 @Getter
-
-public class Account implements {
+@Entity
+public class Account {
     private Long id;
     private Date birthDAte;
     private Date createdAt;
