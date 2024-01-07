@@ -1,9 +1,6 @@
 package fr.Emilie.poec.Spotifish.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,8 +23,15 @@ public class Playlist {
     private Date updatedAt;
 
 
-    private List<Account> accounts;
+    private List<Account> likingaccounts;
+
+    @ManyToOne
+    @JoinTable(
+            name = "account_like_playlist",
+            joinColumns = @JoinColumn(name = "playlist_id"),
+            inverseJoinColumns = @JoinColumn(name = "account")
+    )
     private Account account;
 
-    private List<Song> songs ;
+
 }

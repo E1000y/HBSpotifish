@@ -1,7 +1,7 @@
 package fr.Emilie.poec.Spotifish.entity;
 
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +18,8 @@ import java.util.List;
 @Entity
 public class Artist {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -26,6 +28,8 @@ public class Artist {
     private String urlBanner;
     private String certificate;
     private Date createdAt;
+
+    @OneToMany(mappedBy = "album")
     private List<Album> albums = new ArrayList<>();
 
 

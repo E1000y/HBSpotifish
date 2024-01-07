@@ -1,7 +1,7 @@
 package fr.Emilie.poec.Spotifish.entity;
 
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,15 +17,16 @@ import java.util.List;
 @Setter
 @Entity
 public class Album {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private Date createdAt;
 
+    @ManyToOne
     private Artist artist;
 
-    private
-    List<Song> songs = new ArrayList<>();
+
 
 
 }
